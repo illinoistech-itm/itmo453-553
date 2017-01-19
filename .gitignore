@@ -1,0 +1,10 @@
+packer_cache/
+*.box
+.vagrant/
+*.vdi
+output*/
+*~
+*.vmdk
+*.ovf
+build/*
+.vagrant/*
