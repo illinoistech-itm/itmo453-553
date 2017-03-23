@@ -53,5 +53,11 @@ sudo yum install grafana
 
 # P.153 - Listing 4-39 - Create empty conf file to avoid error
 sudo cp -v carbon.conf /etc/carbon
+sudo touch /etc/carbon/storage-aggregation.conf
+
+sudo cp -v storage-schemas.conf /etc/carbon
+
+# Listing 4.50 move the carbon cache demon systemd service file
+sudo cp -v carbon-cache@.service /lib/systemd/system/carbon-cache@.service
 
 
