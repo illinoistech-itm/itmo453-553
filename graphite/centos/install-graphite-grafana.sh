@@ -60,4 +60,31 @@ sudo cp -v storage-schemas.conf /etc/carbon
 # Listing 4.50 move the carbon cache demon systemd service file
 sudo cp -v carbon-cache@.service /lib/systemd/system/carbon-cache@.service
 
+# Listing 4.51: Enabling and starting the systemd Carbon Cache daemons
+sudo systemctl enable carbon-cache@1.service 
+sudo systemctl enable carbon-cache@2.service
+sudo systemctl start carbon-cache@1.service
+sudo systemctl start carbon-cache@2.service
+
+# Listing 4.52 move carbon-relay systemd demon service definition
+sudo cp -v carbon-relay@.service /lib/systemd/system/carbon-relay@.service
+
+# Listing 4.53: Enabling and starting the systemd Carbon relay daemon
+sudo systemctl enable carbon-relay@1.service
+sudo systemctl start carbon-relay@1.service
+
+# Listing 4.54: Remove the old systemd unit files for Carbon
+sudo rm -f /lib/systemd/system/carbon-relay.service
+sudo rm -f /lib/systemd/system/carbon-cache.service
+
+# P. 162 Copy the default graphite-api.yaml file overwritting the default one installed
+sudo cp -v graphite-api.yaml /etc/graphite-api.yaml
+
+# Listing 4.56: Creating the /var/lib/graphite/api_search_indexfile
+sudo touch /var/lib/graphite/api_search_index
+sudo chown _graphite:_graphite /var/lib/graphite/api_search_index
+
+
+
+
 
