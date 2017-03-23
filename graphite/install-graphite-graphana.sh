@@ -51,6 +51,8 @@ sudo cp graphite-carbon /etc/default/graphite-carbon
 sudo service carbon-relay start 
 sudo service carbon-cache start
 
+# P. 162 Copy the default graphite-api.yaml file overwritting the default one installed
+sudo cp -v graphite-api.yaml /etc/graphite-api.yaml
 
 # Listing 4.56: Creating the /var/lib/graphite/api_search_index file
 sudo touch /var/lib/graphite/api_search_index
