@@ -29,3 +29,22 @@ sudo yum install -y python-pip gcc libffi-devel cairo-devel libtool libyaml-deve
 sudo pip install -U six pyparsing websocket urllib3 
 sudo pip install graphite-api gunicorn
 
+# Listing4.19: Creating the Grafana Yum repository
+# This will be populated by us so we can add the Centos repo so we can install it via yum
+sudo touch /etc/yum.repos.d/grafana.repo
+
+#Listing 4.20: Yum repository definition for Grafana - this will out put this text and then insert it into  grafana.repo
+cat << EOT >> ./grafana.repo
+[grafana] 
+name=grafana 
+baseurl=https://packagecloud.io/grafana/stable/el/7/$basearch 
+repo_gpgcheck=1 
+enabled=1 
+gpgcheck=1 
+gpgkey=https://packagecloud.io/gpg.key https://grafanarel.s3.amazonaws.com/RPM-GPG-KEY-grafana 
+sslverify=1 
+sslcacert=/etc/pki/tls/certs/ca-bundle.crt
+EOT
+
+sudo mv ./grafana.repo /etc/yum.repos.d/grafana.repo
+
