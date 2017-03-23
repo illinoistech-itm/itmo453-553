@@ -84,7 +84,8 @@ sudo cp -v graphite-api.yaml /etc/graphite-api.yaml
 sudo touch /var/lib/graphite/api_search_index
 sudo chown _graphite:_graphite /var/lib/graphite/api_search_index
 
-
+# Listing 4.58: Systemd script for Graphite-API
+sudo cp -v graphite-api.service /lib/systemd/system/graphite-api.service
 
 
 
