@@ -46,7 +46,7 @@ sslverify=1
 sslcacert=/etc/pki/tls/certs/ca-bundle.crt
 EOT
 
-sudo mv ./grafana.repo /etc/yum.repos.d/grafana.repo
+sudo mv -v ./grafana.repo /etc/yum.repos.d/grafana.repo
 
 # Listing 4.21: Installing Grafana via Yum
 sudo yum install grafana
