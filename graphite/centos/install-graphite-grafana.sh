@@ -48,3 +48,10 @@ EOT
 
 sudo mv ./grafana.repo /etc/yum.repos.d/grafana.repo
 
+# Listing 4.21: Installing Grafana via Yum
+sudo yum install grafana
+
+# P.153 - Listing 4-39 - Create empty conf file to avoid error
+sudo cp -v carbon.conf /etc/carbon
+
+
