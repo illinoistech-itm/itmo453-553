@@ -90,5 +90,3 @@ sudo cp -v graphite-api.service /lib/systemd/system/graphite-api.service
 # Listing 4.60: Enabling and starting the systemd Graphite-API daemons
 sudo systemctl enable graphite-api.service
 sudo systemctl start graphite-api.service
-
-
