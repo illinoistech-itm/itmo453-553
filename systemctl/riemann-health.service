@@ -1,0 +1,11 @@
+[Unit]
+Description=Riemann Health
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/riemann-health
+PidFile=/var/run/riemann-health.pid
+Restart=on-failure
+
+[Install]
+Alias=riemann-health.service
