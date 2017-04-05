@@ -7,7 +7,7 @@ sudo apt-get update
 sudo apt-get -y install collectd
 
 #copy the provided collectd.conf file overwritting the default collectd.conf
-sudo mv ./collectd.conf /etc
+sudo mv ./collectd.conf /etc/collectd/
 
 #Copying the provided and configured collectd.d default plugins to be loaded
 sudo mv ./collectd.d /etc/
