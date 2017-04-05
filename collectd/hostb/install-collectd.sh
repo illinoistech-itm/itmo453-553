@@ -1,4 +1,6 @@
 #!/bin/bash
+set +x
+set +e
 
 # Listing 5.3.1
 sudo yum install -y epel-release
