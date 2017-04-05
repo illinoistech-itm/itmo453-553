@@ -11,7 +11,7 @@ sudo yum install collectd protobuf-c collectd-write_riemann
 sudo cp ./collectd.conf /etc/
 
 #Copying the provided and configured collectd.d default plugins to be loaded
-sudo cp ./collectd.d /etc/
+sudo cp -r ./collectd.d /etc/
 
 sudo systemctl enable collectd
 sudo service collectd start
