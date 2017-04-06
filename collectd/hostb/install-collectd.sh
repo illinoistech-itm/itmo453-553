@@ -5,7 +5,7 @@ set +e
 # Listing 5.3.1
 sudo yum install -y epel-release
 
-sudo yum install collectd protobuf-c collectd-write_riemann
+sudo yum install collectd protobuf-c collectd-write_riemann stress
 
 #copy the provided collectd.conf file overwritting the default collectd.conf
 sudo cp ./collectd.conf /etc/
