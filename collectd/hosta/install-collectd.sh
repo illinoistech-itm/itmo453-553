@@ -6,7 +6,7 @@ set +e
 sudo sudo add-apt-repository ppa:collectd/collectd-5.5
 
 sudo apt-get update
-sudo apt-get -y install collectd
+sudo apt-get -y install collectd stress
 
 #copy the provided collectd.conf file overwritting the default collectd.conf
 sudo cp ./collectd.conf /etc/collectd/
