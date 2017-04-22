@@ -33,20 +33,23 @@ sudo pip install graphite-api gunicorn
 # This will be populated by us so we can add the Centos repo so we can install it via yum
 sudo touch /etc/yum.repos.d/grafana.repo
 
-#Listing 4.20: Yum repository definition for Grafana - this will out put this text and then insert it into  grafana.repo
-cat << EOT >> ./grafana.repo
-[grafana] 
-name=grafana 
-baseurl=https://packagecloud.io/grafana/stable/el/7/$basearch 
-repo_gpgcheck=1 
-enabled=1 
-gpgcheck=1 
-gpgkey=https://packagecloud.io/gpg.key https://grafanarel.s3.amazonaws.com/RPM-GPG-KEY-grafana 
-sslverify=1 
-sslcacert=/etc/pki/tls/certs/ca-bundle.crt
+# P.138 - Listing 4.20: Yum repository definition for Grafana
+# http://superuser.com/questions/351193/echo-multiple-lines-of-text-to-a-file-in-bash
+# http://docs.grafana.org/installation/rpm/
+cat > grafana.repo <<'EOT'
+[grafana]
+name=grafana
+baseurl=https://packagecloud.io/grafana/stable/el/6/$basearch
+repo_gpgcheck=1
+enabled=1
+gpgcheck=1
+gpgkey=https://packagecloud.io/gpg.key https://grafanarel.s3.amazonaws.com/RPM-GPG-KEY-grafana
+sslverify=1
+sslcacert=/etc/pki/tls/certs/ca-bundle.crt  
 EOT
 
-sudo mv -v ./grafana.repo /etc/yum.repos.d/grafana.repo
+# NOTE Repace the 6 above with your RedHat version, for example 7 for RHEL 7.
+cat ./grafana.repo | sudo tee -a /etc/yum.repos.d/grafana.repo
 
 # Listing 4.21: Installing Grafana via Yum
 sudo yum install grafana
